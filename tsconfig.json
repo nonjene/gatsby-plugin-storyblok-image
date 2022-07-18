@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"outDir": "./dist",
+		"declaration": true,
+		"declarationDir": "./dist",
+		"lib": [
+			"es2018"
+		],
+		"module": "commonjs",
+		"target": "es2018",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"useUnknownInCatchVariables": false
+	},
+	"include": [
+		"./src"
+	]
+}

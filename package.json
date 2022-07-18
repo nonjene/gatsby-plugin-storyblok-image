@@ -1,36 +1,45 @@
 {
-  "name": "gatsby-storyblok-image",
-  "version": "0.3.0",
-  "description": "Adds gatsby-image to Gatsby & Storyblok as a content source.",
-  "source": "src/index.js",
+  "name": "gatsby-plugin-storyblok-image",
+  "version": "2.0.0",
+  "description": "Adds gatsby-plugin-image to Gatsby & Storyblok as a content source.",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "microbundle build",
-    "watch": "microbundle watch",
-    "prepare": "cross-env NODE_ENV=production npm run build"
+    "prebuild": "rimraf \"dist\"",
+    "build": "yarn tsc",
+    "prepublishOnly": "yarn install && yarn build"
   },
   "keywords": [
     "gatsby",
-    "gatsby-plugin",
     "storyblok",
-    "gatsby-image",
+    "gatsby-plugin-image",
     "source-storyblok"
   ],
-  "author": "Thom Krupa <thom@bejamas.io>",
-  "homepage": "https://github.com/bejamas/gatsby-storyblok-image#readme",
-  "repository": "https://github.com/bejamas/gatsby-storyblok-image",
+  "authors": [
+    {
+      "name": "Thom Krupa",
+      "email": "thom@bejamas.io"
+    },
+    {
+      "name": "nonjene",
+      "email": "reanfn89@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/nonjene/gatsby-plugin-storyblok-image#readme",
+  "repository": "https://github.com/nonjene/gatsby-plugin-storyblok-image",
   "bugs": {
-    "url": "https://github.com/bejamas/gatsby-storyblok-image/issues"
+    "url": "https://github.com/nonjene/gatsby-plugin-storyblok-image/issues"
   },
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "babel-preset-gatsby-package": "^0.1.4",
-    "cross-env": "^5.0.5",
-    "microbundle": "^0.11.0"
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2"
   }
 }

@@ -1,7 +1,6 @@
-/*.js
-!index.js
-yarn.lock
-node_modules
 .DS_Store
-.vscode
-utils
+
+node_modules
+dist
+.publishrc
+*.log
