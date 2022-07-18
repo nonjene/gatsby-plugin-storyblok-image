@@ -1,7 +1,16 @@
 import { STORYBLOK_BASE_URL } from '../defaults'
 import { applyFilters } from './helpers'
 
-function buildImageUrl(originalPath, image) {
+interface Image {
+  width: number
+  height: number
+  smartCrop?: boolean | null
+  quality?: number | null
+  format?: string | null
+  fill?: boolean | null
+  aspectRatio?: number | null
+}
+export default function buildImageUrl(originalPath: string, image: Image) {
   let { width, height, smartCrop, quality, format, fill } = image
 
   let [, extension] = originalPath.split('.')
@@ -16,14 +25,11 @@ function buildImageUrl(originalPath, image) {
     url += `/smart`
   }
 
-  let filters = [
+  const filters = [
     ...[quality && `quality(${quality})`],
     ...[format && format !== extension && `format(${format})`],
     ...[fill && `fill(${fill})`]
-  ]
-
-  // remove falsy elements
-  filters = filters.filter(element => Boolean(element) === true)
+  ].filter(Boolean) as string[]
 
   if (filters.length > 0) {
     url += applyFilters(filters)
@@ -35,12 +41,10 @@ function buildImageUrl(originalPath, image) {
   return url
 }
 
-export function buildLowFiUrl(originalPath, {width, height, aspectRatio }) {
+export function buildLowFiUrl(originalPath: string, { width, height, aspectRatio }: Image) {
   return buildImageUrl(originalPath, {
-    width: (width / 3).toFixed(0),
-    height: (height / 3).toFixed(0),
+    width: Number((width / 3).toFixed(0)),
+    height: Number((height / 3).toFixed(0)),
     quality: 10
   })
 }
-
-export default buildImageUrl

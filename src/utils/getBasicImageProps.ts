@@ -1,6 +1,7 @@
-const validImageUrlPattern = /^(https?:)?\/\/a.storyblok.com\/f\/*[0-9]+\/*[0-9]*x*[0-9]*\/[A-Za-z0-9]+\/[\S]+\.[a-zA-Z]+/
+const validImageUrlPattern =
+  /^(https?:)?\/\/a.storyblok.com\/f\/*[0-9]+\/*[0-9]*x*[0-9]*\/[A-Za-z0-9]+\/[\S]+\.[a-zA-Z]+/
 
-function getBasicImageProps(image) {
+function getBasicImageProps(image: string | { image: string; base64: string }) {
   let url = null
   let lqip = null
 
@@ -13,7 +14,7 @@ function getBasicImageProps(image) {
     lqip = image.base64 ? image.base64 : null
   }
 
-  url = validImageUrlPattern.test(url) ? url : null
+  url = url && validImageUrlPattern.test(url) ? url : null
 
   if (!url) {
     return false
