@@ -33,7 +33,7 @@ describe('getGatsbyImage', () => {
       ).toMatchSnapshot()
     })
 
-    xit('should use original width & height when both not provided', () => {
+    it('should use original width & height when both not provided', () => {
       expect(
         getGatsbyImage(IMG_URL, {
           layout: 'fixed'
@@ -48,13 +48,13 @@ describe('getGatsbyImage', () => {
         images: {
           sources: [],
           fallback: {
-            src: `${IMG_URL}/m/filters:quality(100)`,
-            srcSet: [`${IMG_URL}/m/filters:quality(100) 1200w`],
+            src: `${IMG_URL}/m/smart/filters:quality(100)`,
+            srcSet: `${IMG_URL}/m/1200x1000/smart/filters:quality(100) 1200w`,
             sizes: '1200px'
           }
         },
         width: 1200,
-        height: 1200
+        height: 1000
       })
     })
   })
