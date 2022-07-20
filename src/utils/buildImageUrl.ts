@@ -2,23 +2,24 @@ import { STORYBLOK_BASE_URL } from '../defaults'
 import { applyFilters } from './helpers'
 
 interface Image {
-  width: number
-  height: number
-  smartCrop?: boolean | null
-  quality?: number | null
-  format?: string | null
-  fill?: boolean | null
-  aspectRatio?: number | null
+  width?: number
+  height?: number
+  smartCrop?: boolean
+  quality?: number
+  format?: string
+  backgroundColor?: string
 }
-export default function buildImageUrl(originalPath: string, image: Image) {
-  let { width, height, smartCrop, quality, format, fill } = image
 
-  let [, extension] = originalPath.split('.')
+export default function buildImageUrl(originalPath: string, image: Image): string {
+  const { width, height, smartCrop, quality, format, backgroundColor } = image
 
-  let url = STORYBLOK_BASE_URL
+  const [, extension] = originalPath.split('.')
 
-  if (width && height) {
-    url += `/${width}x${height}`
+  // base url
+  let url = STORYBLOK_BASE_URL + '/' + originalPath + '/m'
+
+  if (width || height) {
+    url += `/${width || 0}x${height || 0}`
   }
 
   if (smartCrop) {
@@ -28,23 +29,23 @@ export default function buildImageUrl(originalPath: string, image: Image) {
   const filters = [
     ...[quality && `quality(${quality})`],
     ...[format && format !== extension && `format(${format})`],
-    ...[fill && `fill(${fill})`]
+    ...[backgroundColor && `fill(${backgroundColor.replace('#', '')})`]
   ].filter(Boolean) as string[]
 
   if (filters.length > 0) {
     url += applyFilters(filters)
   }
 
-  // add original path at the end
-  url += `/${originalPath}`
-
+  // fullfil the url format when no any filters or size config
+  if (url.endsWith('/m')) {
+    url += '/'
+  }
   return url
 }
 
-export function buildLowFiUrl(originalPath: string, { width, height, aspectRatio }: Image) {
+export function buildLowFiUrl(originalPath: string): string {
   return buildImageUrl(originalPath, {
-    width: Number((width / 3).toFixed(0)),
-    height: Number((height / 3).toFixed(0)),
+    width: 20,
     quality: 10
   })
 }

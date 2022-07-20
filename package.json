@@ -8,21 +8,19 @@
     "dist"
   ],
   "scripts": {
+    "test": "yarn jest",
     "prebuild": "rimraf \"dist\"",
     "build": "yarn tsc",
     "prepublishOnly": "yarn install && yarn build"
   },
   "keywords": [
     "gatsby",
+    "gatsby-plugin",
     "storyblok",
     "gatsby-plugin-image",
     "source-storyblok"
   ],
   "authors": [
-    {
-      "name": "Thom Krupa",
-      "email": "thom@bejamas.io"
-    },
     {
       "name": "nonjene",
       "email": "reanfn89@gmail.com"
@@ -39,7 +37,12 @@
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.0.6",
+    "babel-jest": "^28.1.3",
     "gatsby-plugin-image": "^2.18.1",
+    "jest": "^28.1.3",
+    "jest-pnp-resolver": "^1.2.2",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.7.4"

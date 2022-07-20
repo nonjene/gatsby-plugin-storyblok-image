@@ -1,42 +1,20 @@
-export interface BaseOptions {
-  quality?: number | null
-  smartCrop?: boolean | null
-  // format is dead prop
-  format?: string | null
-  fill?: boolean | null
-  toFormat?: string | null
-  base64?: boolean | null
-  useBase64?: boolean | null
+export interface GetGatsbyImageOptions {
+  layout: 'fixed' | 'constrained' | 'fullWidth'
+  // width & height can be auto detect as Storyblok have calc & mark it in the URL
+  width?: number
+  height?: number
+  quality?: number
+  outputPixelDensities?: number[]
+  breakpoints?: number[]
+  backgroundColor?: string
+  smartCrop?: boolean
+  // Simply disable the fallback image when the low resolution image is not used
+  fallback?: false
 }
 
-export interface FixedImageOptions extends BaseOptions {
-  width?: number | null
-  height?: number | null
-}
-
-export interface FluidImageOptions extends BaseOptions {
-  maxWidth?: number | null
-  maxHeight?: number | null
-  sizes?: string
-}
-
-export interface OriginalExportFixed {
-  base64: string
-  aspectRatio: number
-  width: number
-  height: number
-  src: string
-  srcWebp: string
-  srcSet: string | null
-  srcSetWebp: string | null
-}
-
-export interface OriginalExportFluid {
-  base64: string
-  aspectRatio: number
-  src: string
-  srcWebp: string
-  srcSet: string | null
-  srcSetWebp: string | null
-  sizes: string
+export interface MergedGetGatsbyImageOptions extends GetGatsbyImageOptions {
+  quality: number
+  outputPixelDensities: number[]
+  breakpoints: number[]
+  smartCrop: boolean
 }

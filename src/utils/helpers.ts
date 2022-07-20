@@ -1,11 +1,12 @@
 export function applyFilters(filters: string[]) {
-  return filters.reduce((acc, currentFilter, i) => {
-    return `${acc}:${currentFilter}`
-  }, '/filters')
+  if (filters.length === 0) {
+    return ''
+  }
+  return `/filters:${filters.join(':')}`
 }
 
 export function isWebP(url: string) {
   const isConverted = url.includes('filters:format(webp)')
-  const isOriginal = /[a-f0-9]+-\d+x\d+\.webp/.test(url)
+  const isOriginal = /\.webp$/.test(url)
   return isConverted || isOriginal
 }
