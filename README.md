@@ -43,7 +43,7 @@ export default function Image({ image }) {
     // backgroundColor: 'transparent', // make the image like fixed object to contain instead of cover. Default not set.
 
     // Storyblok image service additional options:
-    // smartCrop: false, // default false
+    // smartCrop: true, // default true
   })
 
   return (
