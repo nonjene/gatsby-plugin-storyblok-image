@@ -7,6 +7,6 @@ export const defaultOptions: Omit<MergedGetGatsbyImageOptions, 'layout'> = {
   smartCrop: true,
   outputPixelDensities: [1, 2, 3],
   breakpoints: [750, 1080, 1366, 1920],
-  fit: 'cover',
+  fitIn: false,
   fitInColor: 'transparent'
 }

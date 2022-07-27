@@ -6,7 +6,7 @@ export interface GetGatsbyImageOptions {
   quality?: number
   outputPixelDensities?: number[]
   breakpoints?: number[]
-  fit?: 'cover' | 'contain'
+  fitIn?: boolean
   fitInColor?: string
   backgroundColor?: string
   smartCrop?: boolean
@@ -20,5 +20,5 @@ export interface MergedGetGatsbyImageOptions extends GetGatsbyImageOptions {
   breakpoints: number[]
   smartCrop: boolean
   fitInColor: string
-  fit: 'cover' | 'contain'
+  fitIn: boolean
 }

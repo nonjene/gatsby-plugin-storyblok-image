@@ -4,7 +4,7 @@ import { MergedGetGatsbyImageOptions } from '../typings/module'
 
 interface Image
   extends Partial<
-    Pick<MergedGetGatsbyImageOptions, 'width' | 'height' | 'smartCrop' | 'quality' | 'fit' | 'fitInColor'>
+    Pick<MergedGetGatsbyImageOptions, 'width' | 'height' | 'smartCrop' | 'quality' | 'fitIn' | 'fitInColor'>
   > {}
 
 const TRANSPARENT = 'transparent'
@@ -12,7 +12,7 @@ const TRANSPARENT = 'transparent'
 const regexIsFullUrl = /(http?:|)\/\//
 
 export default function buildImageUrl(originalPath: string, image: Image): string {
-  const { width, height, smartCrop, quality, fit, fitInColor } = image
+  const { width, height, smartCrop, quality, fitIn, fitInColor } = image
 
   // const [, extension] = originalPath.split('.')
 
@@ -29,6 +29,10 @@ export default function buildImageUrl(originalPath: string, image: Image): strin
 
   url += originalPath + '/m'
 
+  if (fitIn) {
+    url += '/fit-in'
+  }
+
   if (width || height) {
     url += `/${width || 0}x${height || 0}`
   }
@@ -37,12 +41,10 @@ export default function buildImageUrl(originalPath: string, image: Image): strin
     url += `/smart`
   }
 
-  const fitToContain = fit === 'contain'
-
   const filters = [
     quality && `quality(${quality})`,
     // format && format !== extension && `format(${format})`,
-    fitToContain && `fill(${(fitInColor || TRANSPARENT).replace('#', '')})`
+    fitIn && `fill(${(fitInColor || TRANSPARENT).replace('#', '')})`
   ].filter(Boolean) as string[]
 
   if (filters.length > 0) {
@@ -56,10 +58,10 @@ export default function buildImageUrl(originalPath: string, image: Image): strin
   return url
 }
 
-export function buildLowFiUrl(originalPath: string, opt?: Pick<Image, 'fit'>): string {
+export function buildLowFiUrl(originalPath: string, opt?: Pick<Image, 'fitIn'>): string {
   return buildImageUrl(originalPath, {
     width: 20,
     quality: 10,
-    fit: opt?.fit
+    fitIn: opt?.fitIn
   })
 }
