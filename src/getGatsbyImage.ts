@@ -2,7 +2,7 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image/dist/src/components/g
 
 import getBasicImageProps from './utils/getBasicImageProps'
 import getWidths from './utils/getWidths'
-import buildUrl, { buildLowFiUrl } from './utils/buildImageUrl'
+import buildImageUrl, { buildLowFiUrl } from './utils/buildImageUrl'
 import { defaultOptions } from './defaults'
 import { GetGatsbyImageOptions, MergedGetGatsbyImageOptions } from './typings/module'
 
@@ -82,7 +82,7 @@ export default function getGatsbyImage(imageRaw: string, args: GetGatsbyImageOpt
     const resolution = `${currentWidth}w`
     const currentHeight = Math.round(currentWidth / desiredAspectRatio)
 
-    const url = buildUrl(originalPath, {
+    const url = buildImageUrl(originalPath, {
       ...options,
       width: currentWidth,
       height: currentHeight
@@ -90,7 +90,7 @@ export default function getGatsbyImage(imageRaw: string, args: GetGatsbyImageOpt
 
     return `${url} ${resolution}`
   })
-  const src = buildUrl(originalPath, { ...options, width, height })
+  const src = buildImageUrl(originalPath, { ...options, width, height })
 
   return {
     layout: options.layout,

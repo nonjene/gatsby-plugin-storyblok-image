@@ -9,13 +9,25 @@ interface Image
 
 const TRANSPARENT = 'transparent'
 
+const regexIsFullUrl = /(http?:|)\/\//
+
 export default function buildImageUrl(originalPath: string, image: Image): string {
   const { width, height, smartCrop, quality, fit, fitInColor } = image
 
   // const [, extension] = originalPath.split('.')
 
   // base url
-  let url = STORYBLOK_BASE_URL + '/' + originalPath + '/m'
+  let url = ''
+
+  // compat path is a full url or just path
+  if (!regexIsFullUrl.test(originalPath)) {
+    url += STORYBLOK_BASE_URL
+    if (!originalPath.startsWith('/')) {
+      url += '/'
+    }
+  }
+
+  url += originalPath + '/m'
 
   if (width || height) {
     url += `/${width || 0}x${height || 0}`
