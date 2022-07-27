@@ -1,19 +1,18 @@
 import { STORYBLOK_BASE_URL } from '../defaults'
 import { applyFilters } from './helpers'
+import { MergedGetGatsbyImageOptions } from '../typings/module'
 
-interface Image {
-  width?: number
-  height?: number
-  smartCrop?: boolean
-  quality?: number
-  format?: string
-  backgroundColor?: string
-}
+interface Image
+  extends Partial<
+    Pick<MergedGetGatsbyImageOptions, 'width' | 'height' | 'smartCrop' | 'quality' | 'fit' | 'fitInColor'>
+  > {}
+
+const TRANSPARENT = 'transparent'
 
 export default function buildImageUrl(originalPath: string, image: Image): string {
-  const { width, height, smartCrop, quality, format, backgroundColor } = image
+  const { width, height, smartCrop, quality, fit, fitInColor } = image
 
-  const [, extension] = originalPath.split('.')
+  // const [, extension] = originalPath.split('.')
 
   // base url
   let url = STORYBLOK_BASE_URL + '/' + originalPath + '/m'
@@ -26,10 +25,12 @@ export default function buildImageUrl(originalPath: string, image: Image): strin
     url += `/smart`
   }
 
+  const fitToContain = fit === 'contain'
+
   const filters = [
-    ...[quality && `quality(${quality})`],
-    ...[format && format !== extension && `format(${format})`],
-    ...[backgroundColor && `fill(${backgroundColor.replace('#', '')})`]
+    quality && `quality(${quality})`,
+    // format && format !== extension && `format(${format})`,
+    fitToContain && `fill(${(fitInColor || TRANSPARENT).replace('#', '')})`
   ].filter(Boolean) as string[]
 
   if (filters.length > 0) {
@@ -43,9 +44,10 @@ export default function buildImageUrl(originalPath: string, image: Image): strin
   return url
 }
 
-export function buildLowFiUrl(originalPath: string): string {
+export function buildLowFiUrl(originalPath: string, opt?: Pick<Image, 'fit'>): string {
   return buildImageUrl(originalPath, {
     width: 20,
-    quality: 10
+    quality: 10,
+    fit: opt?.fit
   })
 }

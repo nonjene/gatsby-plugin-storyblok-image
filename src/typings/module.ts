@@ -6,6 +6,8 @@ export interface GetGatsbyImageOptions {
   quality?: number
   outputPixelDensities?: number[]
   breakpoints?: number[]
+  fit?: 'cover' | 'contain'
+  fitInColor?: string
   backgroundColor?: string
   smartCrop?: boolean
   // Simply disable the fallback image when the low resolution image is not used
@@ -17,4 +19,6 @@ export interface MergedGetGatsbyImageOptions extends GetGatsbyImageOptions {
   outputPixelDensities: number[]
   breakpoints: number[]
   smartCrop: boolean
+  fitInColor: string
+  fit: 'cover' | 'contain'
 }
