@@ -7,13 +7,13 @@ Object {
   "images": Object {
     "fallback": Object {
       "sizes": "(min-width: 100px) 100px, 100vw",
-      "src": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/100x100/smart/filters:quality(100)",
-      "srcSet": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/100x100/smart/filters:quality(100) 100w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/200x200/smart/filters:quality(100) 200w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/300x300/smart/filters:quality(100) 300w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/750x750/smart/filters:quality(100) 750w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/1080x1080/smart/filters:quality(100) 1080w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/1200x1200/smart/filters:quality(100) 1200w",
+      "src": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/100x100/smart",
+      "srcSet": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/100x100/smart 100w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/200x200/smart 200w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/300x300/smart 300w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/750x750/smart 750w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/1080x1080/smart 1080w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/0x1200/smart 1200w",
     },
     "sources": Array [],
   },
@@ -33,10 +33,10 @@ Object {
   "images": Object {
     "fallback": Object {
       "sizes": "120px",
-      "src": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/0x100/smart/filters:quality(100)",
-      "srcSet": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/120x100/smart/filters:quality(100) 120w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/240x200/smart/filters:quality(100) 240w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/360x300/smart/filters:quality(100) 360w",
+      "src": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/0x100/smart",
+      "srcSet": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/120x100/smart 120w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/240x200/smart 240w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/360x300/smart 360w",
     },
     "sources": Array [],
   },
@@ -56,10 +56,10 @@ Object {
   "images": Object {
     "fallback": Object {
       "sizes": "100px",
-      "src": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/100x0/smart/filters:quality(100)",
-      "srcSet": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/100x83/smart/filters:quality(100) 100w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/200x167/smart/filters:quality(100) 200w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/300x250/smart/filters:quality(100) 300w",
+      "src": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/100x0/smart",
+      "srcSet": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/100x83/smart 100w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/200x167/smart 200w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/300x250/smart 300w",
     },
     "sources": Array [],
   },
@@ -72,7 +72,7 @@ https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png
 }
 `;
 
-exports[`getGatsbyImage when layout is fixed should match the return data when provide width & height 1`] = `
+exports[`getGatsbyImage when layout is fixed should match the return data when provide width & height & quality 1`] = `
 Object {
   "backgroundColor": "transparent",
   "height": 100,
@@ -102,10 +102,10 @@ Object {
   "images": Object {
     "fallback": Object {
       "sizes": "100vw",
-      "src": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/smart/filters:quality(100)",
-      "srcSet": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/750x625/smart/filters:quality(100) 750w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/1080x900/smart/filters:quality(100) 1080w,
-https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/1200x1000/smart/filters:quality(100) 1200w",
+      "src": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/smart",
+      "srcSet": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/750x625/smart 750w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/1080x900/smart 1080w,
+https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/smart 1200w",
     },
     "sources": Array [],
   },

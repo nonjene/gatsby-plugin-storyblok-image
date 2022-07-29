@@ -1,17 +1,16 @@
-import type { IGatsbyImageData } from 'gatsby-plugin-image/dist/src/components/gatsby-image.browser'
-
 import getGatsbyImage from '../getGatsbyImage'
 
 describe('getGatsbyImage', () => {
   const IMG_URL = 'https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png'
 
   describe('when layout is fixed', () => {
-    it('should match the return data when provide width & height', () => {
+    it('should match the return data when provide width & height & quality', () => {
       expect(
         getGatsbyImage(IMG_URL, {
           layout: 'fixed',
           width: 100,
-          height: 100
+          height: 100,
+          quality: 100
         })
       ).toMatchSnapshot()
     })
@@ -48,8 +47,8 @@ describe('getGatsbyImage', () => {
         images: {
           sources: [],
           fallback: {
-            src: `${IMG_URL}/m/smart/filters:quality(100)`,
-            srcSet: `${IMG_URL}/m/1200x1000/smart/filters:quality(100) 1200w`,
+            src: `${IMG_URL}/m/smart`,
+            srcSet: `${IMG_URL}/m/smart 1200w`,
             sizes: '1200px'
           }
         },

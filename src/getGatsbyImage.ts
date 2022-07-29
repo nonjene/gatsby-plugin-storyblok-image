@@ -80,12 +80,13 @@ export default function getGatsbyImage(imageRaw: string, args: GetGatsbyImageOpt
   const widths = getWidths(options, outputWidth, dimensions.width)
   const srcSetArr = widths.map((currentWidth) => {
     const resolution = `${currentWidth}w`
+
     const currentHeight = Math.round(currentWidth / desiredAspectRatio)
 
     const url = buildImageUrl(originalPath, {
       ...options,
-      width: currentWidth,
-      height: currentHeight
+      width: currentWidth === dimensions.width ? undefined : currentWidth,
+      height: currentHeight === dimensions.height ? undefined : currentHeight
     })
 
     return `${url} ${resolution}`
