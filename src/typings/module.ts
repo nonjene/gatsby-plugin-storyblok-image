@@ -15,7 +15,6 @@ export interface GetGatsbyImageOptions {
 }
 
 export interface MergedGetGatsbyImageOptions extends GetGatsbyImageOptions {
-  quality: number
   outputPixelDensities: number[]
   breakpoints: number[]
   smartCrop: boolean
