@@ -11,7 +11,7 @@
     "test": "yarn jest",
     "prebuild": "rimraf \"dist\"",
     "build": "yarn tsc",
-    "prepublishOnly": "yarn install && yarn build"
+    "prepublishOnly": "yarn install && yarn build && yarn test"
   },
   "keywords": [
     "gatsby",
