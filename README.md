@@ -2,6 +2,7 @@
 
 [![Using TypeScript](https://img.shields.io/badge/%3C/%3E-TypeScript-0072C4.svg)](https://www.typescriptlang.org/)
 [![Tested with Jest](https://img.shields.io/badge/tested_with-Jest-99424f.svg)](https://github.com/facebook/jest)
+[![Coverage Status](https://coveralls.io/repos/github/nonjene/gatsby-plugin-storyblok-image/badge.svg?branch=master)](https://coveralls.io/github/nonjene/gatsby-plugin-storyblok-image?branch=master)
 
 _gatsby-plugin-storyblok-image_ let you use gatsby-plugin-image with [Storyblok service v2](https://www.storyblok.com/docs/image-service).
 
