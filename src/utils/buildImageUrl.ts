@@ -47,9 +47,7 @@ export default function buildImageUrl(originalPath: string, image: Image): strin
     fitIn && `fill(${(fitInColor || TRANSPARENT).replace('#', '')})`
   ].filter(Boolean) as string[]
 
-  if (filters.length > 0) {
-    url += applyFilters(filters)
-  }
+  url += applyFilters(filters)
 
   // fullfil the url format when no any filters or size config
   if (url.endsWith('/m')) {

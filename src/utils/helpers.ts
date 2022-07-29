@@ -1,4 +1,4 @@
-export function applyFilters(filters: string[]) {
+export function applyFilters(filters: string[]): string {
   if (filters.length === 0) {
     return ''
   }
