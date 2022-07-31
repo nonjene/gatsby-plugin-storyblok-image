@@ -1,4 +1,4 @@
-import buildImageUrl from '../buildImageUrl'
+import buildImageUrl, { buildLowFiUrl } from '../buildImageUrl'
 
 describe('buildImageUrl', () => {
   describe('handle link', () => {
@@ -43,5 +43,13 @@ describe('buildImageUrl', () => {
         `"https://a.storyblok.com/f/79434/1860x1860/f653050665/foo.png/m/fit-in/600x0/filters:fill(transparent)"`
       )
     })
+  })
+})
+
+describe('buildLowFiUrl', () => {
+  it('should set height when it is set', () => {
+    expect(buildLowFiUrl('f/79434/1860x1860/f653050665/foo.png', { width: 500, height: 300 })).toBe(
+      'https://a.storyblok.com/f/79434/1860x1860/f653050665/foo.png/m/20x12/filters:quality(10)'
+    )
   })
 })
