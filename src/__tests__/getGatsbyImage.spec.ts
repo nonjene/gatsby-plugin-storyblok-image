@@ -68,6 +68,19 @@ describe('getGatsbyImage', () => {
         })
       ).toMatchSnapshot()
     })
+    it('should keep aspect ratio when width is larger than the source', () => {
+      expect(
+        getGatsbyImage(IMG_URL, {
+          layout: 'constrained',
+          width: 1300,
+          height: 1000
+        })?.images.fallback.srcSet
+      ).toMatchInlineSnapshot(`
+        "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/750x577/smart 750w,
+        https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/1080x831/smart 1080w,
+        https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/1200x923/smart 1200w"
+      `)
+    })
   })
 
   describe('when layout is full width', () => {

@@ -83,10 +83,14 @@ export default function getGatsbyImage(imageRaw: string, args: GetGatsbyImageOpt
 
     const currentHeight = Math.round(currentWidth / desiredAspectRatio)
 
+    // Workaround for Storyblok has bug when crop with width larger than 4000 (eg: crop 5000 will get 4000)
+    // Not to set crop when size is same to source
+    const sameToSource = currentWidth === dimensions.width && currentHeight === dimensions.height
+
     const url = buildImageUrl(originalPath, {
       ...options,
-      width: currentWidth === dimensions.width ? undefined : currentWidth,
-      height: currentHeight === dimensions.height ? undefined : currentHeight
+      width: sameToSource ? undefined : currentWidth,
+      height: sameToSource ? undefined : currentHeight
     })
 
     return `${url} ${resolution}`
