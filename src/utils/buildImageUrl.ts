@@ -56,12 +56,12 @@ export default function buildImageUrl(originalPath: string, image: Image): strin
   return url
 }
 
-export function buildLowFiUrl(originalPath: string, opt?: Pick<Image, 'fitIn' | 'height' | 'width'>): string {
+export function buildLowFiUrl(originalPath: string, opt: Image = {}): string {
   const width = 20
   let height: undefined | number = undefined
 
   // Compat case when croping with different aspect ratio
-  if (opt?.height && opt?.width) {
+  if (opt.height && opt.width) {
     height = (opt.height / opt.width) * width
   }
 
@@ -69,6 +69,6 @@ export function buildLowFiUrl(originalPath: string, opt?: Pick<Image, 'fitIn' | 
     width,
     height,
     quality: 10,
-    fitIn: opt?.fitIn
+    fitIn: opt.fitIn
   })
 }

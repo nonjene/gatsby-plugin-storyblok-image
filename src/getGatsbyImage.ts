@@ -101,7 +101,7 @@ export default function getGatsbyImage(imageRaw: string, args: GetGatsbyImageOpt
     layout: options.layout,
     placeholder: {
       sources: [],
-      fallback: options.fallback === false ? null : buildLowFiUrl(originalPath, { width, height })
+      fallback: options.fallback === false ? null : buildLowFiUrl(originalPath, options)
     },
     backgroundColor: options.backgroundColor || 'transparent',
     images: {
