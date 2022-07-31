@@ -4,11 +4,14 @@
 [![Tested with Jest](https://img.shields.io/badge/tested_with-Jest-99424f.svg)](https://github.com/facebook/jest)
 [![Coverage Status](https://coveralls.io/repos/github/nonjene/gatsby-plugin-storyblok-image/badge.svg?branch=master)](https://coveralls.io/github/nonjene/gatsby-plugin-storyblok-image?branch=master)
 
-_gatsby-plugin-storyblok-image_ let you use gatsby-plugin-image with [Storyblok service v2](https://www.storyblok.com/docs/image-service).
+_gatsby-plugin-storyblok-image_ let you use [gatsby-plugin-image](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image) with [Storyblok service v2](https://www.storyblok.com/docs/image-service).
 
-Let you can create any dynamic content in the Storyblok CMS and get advantage with the optimized images outside of GraphQL static query.
+This is helpful when your images are dynamically in content.
 
-Plugin write with Typescript. Props design to be gatsby-plugin-image liked.
+Let you take advantage of optimizing any images inside dynamic content (run-time optimizing), gets out of build-time complex processing of download -> markup each source -> static query for each component.
+
+
+Plugin write with Typescript. Options design to be gatsby-plugin-image liked.
 
 
 ## Install
@@ -33,18 +36,24 @@ export default function Image({ image }) {
     // see more: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#layout
     layout: 'fixed',
     
-    // use width & height when layout is 'fixed' or 'constrained'
+    // Use width & height when layout is 'fixed' or 'constrained'
+    // No need when layout is 'fullWidth'
     width: 900,
     height: 900,
     
     // Optional:
     // quality: 100,
-    // outputPixelDensities: [1, 2, 3], // for constrained default is [0.25, 0.5, 1, 2, 3]
-    // breakpoints	[750, 1080, 1366, 1920], // for fullWidth or constrained
-    // backgroundColor: 'transparent', // make the image like fixed object to contain instead of cover. Default not set.
+    // outputPixelDensities: [1, 2, 3], // For fixed or constrained
+    // breakpoints	[750, 1080, 1366, 1920], // For fullWidth or constrained
+    // backgroundColor: '#fff', // Just pass to gatsby-plugin-image image prop
 
-    // Storyblok image service additional options:
-    // smartCrop: true, // default true
+    /** Storyblok image service additional options: */
+    // `fitIn` set `true` to make the image like fixed object to "contain". Refer to https://www.storyblok.com/docs/image-service#fit-in
+    // fitIn: true, // Default false (act like "cover")
+    // fitInColor: '#fff', // Color to fill when fitIn true. Default is transparent. okay to add `#` prefix.
+
+    // smartCrop: true, // Default true
+
   })
 
   return (
