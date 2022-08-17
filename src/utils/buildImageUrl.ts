@@ -62,7 +62,7 @@ export function buildLowFiUrl(originalPath: string, opt: Image = {}): string {
 
   // Compat case when croping with different aspect ratio
   if (opt.height && opt.width) {
-    height = (opt.height / opt.width) * width
+    height = Math.round((opt.height / opt.width) * width)
   }
 
   return buildImageUrl(originalPath, {
