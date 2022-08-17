@@ -48,7 +48,7 @@ describe('buildImageUrl', () => {
 
 describe('buildLowFiUrl', () => {
   it('should set height when it is set', () => {
-    expect(buildLowFiUrl('f/79434/1860x1860/f653050665/foo.png', { width: 500, height: 300, fitIn: true })).toBe(
+    expect(buildLowFiUrl('f/79434/1860x1860/f653050665/foo.png', { width: 500, height: 301, fitIn: true })).toBe(
       'https://a.storyblok.com/f/79434/1860x1860/f653050665/foo.png/m/fit-in/20x12/filters:quality(10):fill(transparent)'
     )
   })
