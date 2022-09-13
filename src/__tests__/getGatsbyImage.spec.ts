@@ -41,7 +41,7 @@ describe('getGatsbyImage', () => {
         layout: 'fixed',
         placeholder: {
           sources: [],
-          fallback: IMG_URL + '/m/20x0/filters:quality(10)'
+          fallback: IMG_URL + '/m/20x0/filters:quality(70)'
         },
         backgroundColor: 'transparent',
         images: {
