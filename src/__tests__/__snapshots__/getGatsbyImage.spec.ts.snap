@@ -19,7 +19,7 @@ https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png
   },
   "layout": "constrained",
   "placeholder": Object {
-    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x20/filters:quality(10)",
+    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x20/filters:quality(70)",
     "sources": Array [],
   },
   "width": 100,
@@ -42,7 +42,7 @@ https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png
   },
   "layout": "fixed",
   "placeholder": Object {
-    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x0/filters:quality(10)",
+    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x0/filters:quality(70)",
     "sources": Array [],
   },
   "width": 120,
@@ -65,7 +65,7 @@ https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png
   },
   "layout": "fixed",
   "placeholder": Object {
-    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x0/filters:quality(10)",
+    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x0/filters:quality(70)",
     "sources": Array [],
   },
   "width": 100,
@@ -88,7 +88,7 @@ https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png
   },
   "layout": "fixed",
   "placeholder": Object {
-    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x20/filters:quality(10)",
+    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x20/filters:quality(70)",
     "sources": Array [],
   },
   "width": 100,
@@ -111,7 +111,7 @@ https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png
   },
   "layout": "fullWidth",
   "placeholder": Object {
-    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x0/filters:quality(10)",
+    "fallback": "https://a.storyblok.com/f/143948/1200x1000/99335d0004/bk-1200-hoang-lan-ph-m.png/m/20x0/filters:quality(70)",
     "sources": Array [],
   },
   "width": 1.2,

@@ -7,5 +7,6 @@ export const defaultOptions: Omit<MergedGetGatsbyImageOptions, 'layout'> = {
   outputPixelDensities: [1, 2, 3],
   breakpoints: [750, 1080, 1366, 1920],
   fitIn: false,
-  fitInColor: 'transparent'
+  fitInColor: 'transparent',
+  fallbackQuality: 70
 }

@@ -12,6 +12,7 @@ export interface GetGatsbyImageOptions {
   smartCrop?: boolean
   // Simply disable the fallback image when the low resolution image is not used
   fallback?: false
+  fallbackQuality?: number
 }
 
 export interface MergedGetGatsbyImageOptions extends GetGatsbyImageOptions {
@@ -20,4 +21,5 @@ export interface MergedGetGatsbyImageOptions extends GetGatsbyImageOptions {
   smartCrop: boolean
   fitInColor: string
   fitIn: boolean
+  fallbackQuality: number
 }

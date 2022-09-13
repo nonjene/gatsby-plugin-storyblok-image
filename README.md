@@ -53,6 +53,8 @@ export default function Image({ image }) {
     // fitInColor: '#fff', // Color to fill when fitIn true. Default is transparent. okay to add `#` prefix.
 
     // smartCrop: true, // Default true
+    // fallback: true, // Set false to disable fallback image. Default true
+    // fallbackQuality: 70, // Default 70
 
   })
 

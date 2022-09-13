@@ -4,7 +4,10 @@ import { MergedGetGatsbyImageOptions } from '../typings/module'
 
 interface Image
   extends Partial<
-    Pick<MergedGetGatsbyImageOptions, 'width' | 'height' | 'smartCrop' | 'quality' | 'fitIn' | 'fitInColor'>
+    Pick<
+      MergedGetGatsbyImageOptions,
+      'width' | 'height' | 'smartCrop' | 'quality' | 'fitIn' | 'fitInColor' | 'fallbackQuality'
+    >
   > {}
 
 const TRANSPARENT = 'transparent'
@@ -68,7 +71,7 @@ export function buildLowFiUrl(originalPath: string, opt: Image = {}): string {
   return buildImageUrl(originalPath, {
     width,
     height,
-    quality: 10,
+    quality: opt.fallbackQuality,
     fitIn: opt.fitIn
   })
 }
